@@ -110,4 +110,4 @@ const updateProduct = async (req: Request, res: Response): Promise<any> => {
   }
 }
 
-export { getAllProducts, createProduct, deleteProduct, updateProduct }
+export { getAllProducts, getProductByName, createProduct, deleteProduct, updateProduct }
