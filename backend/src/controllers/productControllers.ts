@@ -16,6 +16,27 @@ const getAllProducts = async (req: Request, res: Response): Promise<any> => {
   }
 }
 
+const getProductByName = async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { name } = req.params;
+
+    // Búsqueda insensible a mayúsculas/minúsculas
+    const products = await Product.find({
+      name: { $regex: name, $options: 'i' }
+    });
+
+    res.json({
+      success: true,
+      message: `Productos que coinciden con: ${name}`,
+      data: products
+    });
+  } catch (error) {
+    const err = error as Error;
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+
 const createProduct = async (req: Request, res: Response): Promise<any> => {
   try {
     const body = req.body
