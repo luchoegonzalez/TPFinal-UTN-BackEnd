@@ -110,29 +110,37 @@ const Home = () => {
       )}
 
       <section className="grid-products">
-        {products.map((product) => (
-          <div key={product._id}>
-            <h2>{product.name}</h2>
-            <p>${product.price}</p>
-            <p className="category-product">{product.category}</p>
-            {user && (
-              <div className="control-product">
-                <button
-                  className="btn-update"
-                  onClick={() => handleUpdate(product)}
-                >
-                  Actualizar
-                </button>
-                <button
-                  className="btn-delete"
-                  onClick={() => handleDelete(product)}
-                >
-                  Borrar
-                </button>
+        {
+          products.length === 0 && query.trim() !== '' ? (
+            <div className="no-results">
+              <h3>No se encontraron productos con ese nombre.</h3>
+            </div>
+          ) : (
+            products.map((product) => (
+              <div key={product._id}>
+                <h2>{product.name}</h2>
+                <p>${product.price}</p>
+                <p className="category-product">{product.category}</p>
+                {user && (
+                  <div className="control-product">
+                    <button
+                      className="btn-update"
+                      onClick={() => handleUpdate(product)}
+                    >
+                      Actualizar
+                    </button>
+                    <button
+                      className="btn-delete"
+                      onClick={() => handleDelete(product)}
+                    >
+                      Borrar
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        ))}
+            ))
+          )
+        }
       </section>
     </Layout>
   );
