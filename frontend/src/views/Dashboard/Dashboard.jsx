@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
 
 const Dashboard = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const [name, setName] = useState("")
   const [price, setPrice] = useState(0)
   const [category, setCategory] = useState("Sin categoria")
@@ -46,7 +48,7 @@ const Dashboard = () => {
     const newDataProduct = { name, price, category }
 
     try {
-      const response = await fetch("http://localhost:1234/api/products", {
+      const response = await fetch(`${apiUrl}/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

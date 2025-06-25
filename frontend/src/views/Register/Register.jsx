@@ -3,6 +3,8 @@ import { Layout } from "../../components/Layout"
 import { useNavigate } from "react-router-dom"
 
 const Register = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [message, setMessage] = useState("")
@@ -55,7 +57,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:1234/api/auth/register", {
+      const response = await fetch(`${apiUrl}/auth/register`, {
         method: "POST",
         body: JSON.stringify(newDataUser),
         headers: { "Content-Type": "application/json" }
