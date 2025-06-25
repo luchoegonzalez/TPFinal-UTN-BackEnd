@@ -83,20 +83,22 @@ const Home = () => {
     <Layout>
       <h1>Lista de productos</h1>
       {user && <p>Bienvenido, {user.email}</p>}
+
+      <div className="browser-cont">
+        <input
+          type="text"
+          placeholder="Buscar producto por nombre"
+          className="browser"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </div>
+
       {error && (
         <div className="error-home">
           <h2>{error}</h2>
           <Link to={"/login"}>Ir al login</Link>
         </div>
-      )}
-
-      {!error && (
-        <input
-          type="text"
-          placeholder="Buscar producto por nombre"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
       )}
 
       {isEditing && (

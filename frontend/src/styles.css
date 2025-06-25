@@ -83,6 +83,20 @@ a:hover {
   text-align: center;
 }
 
+/*Buscador*/
+.browser-cont{
+  width: 100%;
+  text-align: center;
+}
+
+.browser {
+  display: inline-block;
+  width: 250px;
+  margin: auto;
+}
+
+
+
 /* Productos */
 
 
