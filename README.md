@@ -82,9 +82,15 @@ El programa encontrara automaticamente el /auth y /products.
 ## 🔍 Ejemplo de uso
 
 1. Abrí la aplicación en el navegador.
-2. Regístrate, inicia sesión y carga algunos productos desde el Dashboard.
-3. En el input de búsqueda, escribí parte del nombre de un producto existente, por ejemplo:
-   - `"papas"` → devuelve `"Papas Fritas Lays"` 
+2. Regístrate, inicia sesión y cargá algunos productos desde el Dashboard. Ejemplos:
+   - `"Maceta de barro"`
+   - `"Juego de sábanas"`
+   - `"Pelota saltarina"`
+3. En el input de búsqueda, escribí parte del nombre de un producto, por ejemplo:
+   - `"maceta"` → devuelve `"Maceta de barro"`
+   - `"juego"` → devuelve `"Juego de sábanas"`
+   - `"ta"` → devuelve `"Maceta de barro"`, `"Pelota saltarina"`
+   - `"a"` → devuelve todos los productos que contengan la letra "a"
 4. Si no hay resultados, se muestra un mensaje informativo.
 
 ---
