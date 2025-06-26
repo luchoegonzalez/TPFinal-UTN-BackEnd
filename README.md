@@ -23,7 +23,7 @@ La nueva funcionalidad incorporada permite **buscar productos por nombre** desde
 - Al escribir, se realiza una consulta al backend para buscar productos cuyo nombre **coincida parcial o completamente** con el texto ingresado.
 - La búsqueda es **insensible a mayúsculas**.
 - Si no hay coincidencias, se muestra un mensaje indicando que no se encontraron productos.
-- Se agrego variable de entorno en el frontend para acceder a la API del backend.
+- Se agregó variable de entorno en el frontend para acceder a la API del backend.
 
 ---
 
@@ -82,12 +82,12 @@ El programa encontrara automaticamente el /auth y /products.
 ## 🔍 Ejemplo de uso
 
 1. Abrí la aplicación en el navegador.
-2. Registrate, inicia sesion y carga algunos productos desde el Dashboard.
-2. En el input de búsqueda, escribí parte del nombre de un producto existente, por ejemplo:
+2. Regístrate, inicia sesión y carga algunos productos desde el Dashboard.
+3. En el input de búsqueda, escribí parte del nombre de un producto existente, por ejemplo:
    - `"papas"` → devuelve `"Papas Fritas Lays"` 
-3. Si no hay resultados, se muestra un mensaje informativo.
+4. Si no hay resultados, se muestra un mensaje informativo.
 
 ---
 
 > 💡 Autor: Luciano González  
-> Trabajo Integrador Final – Curso Desarrollo Web – UTN
+> Trabajo Practico Final – Curso de Backend Developer – UTN
