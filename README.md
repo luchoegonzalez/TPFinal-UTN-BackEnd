@@ -1,46 +1,93 @@
-# 🧪 Trabajo Práctico Complementario: Implementación de Búsqueda por Nombre
+# 🛠️ Trabajo Práctico Final UTN: Implementación de Búsqueda
 
-## 🎯 Objetivo
+Este proyecto es una mejora sobre una aplicación CRUD previamente desarrollada con MongoDB, Express, React y Node.js, perteneciente al repositorio: https://github.com/GabrielAlberini/app-utn-final .  
+La nueva funcionalidad incorporada permite **buscar productos por nombre** desde el frontend, consultando a la base de datos de forma parcial e insensible a mayúsculas.
 
-Simular una tarea cotidiana dentro de un entorno de trabajo corporativo, aplicando una mejora sobre una aplicación previamente entregada. Esta mejora consiste en agregar una funcionalidad de búsqueda por nombre en la base de datos de productos, accesible desde el frontend y resuelta en el backend.
+---
 
-## 📌 Alcance de la mejora
+## 🚀 Tecnologías utilizadas
 
-Se parte de una app CRUD funcional con MongoDB, organizada por modelos, rutas y controladores, que ya permite gestionar productos, usuarios (opcional) y categorías. Esta consigna requiere:
+- **Frontend:**
+  - React + Vite
+  - Fetch API
+- **Backend:**
+  - Node.js + Express
+  - MongoDB + Mongoose
+  - TypeScript
 
-- Agregar un campo de búsqueda en el frontend, que permita buscar productos por nombre.
-- Incorporar en el backend una ruta que reciba el valor buscado y devuelva los productos que coincidan parcial o completamente.
-- Asegurar la correcta visualización dinámica de los resultados en el frontend.
-- Mantener y aplicar buenas prácticas como el uso de controladores, rutas limpias, manejo de errores y status de respuesta.
-- Usar variables de entorno en ambos entornos para separar datos sensibles y facilitar la configuración.
+---
 
-## ✅ Requisitos
+## 🧑‍💻 Funcionalidad Agregada: Búsqueda por Nombre
 
-- Utilizar la app CRUD ya desarrollada como base de trabajo.
-- Implementar un input de búsqueda de productos por nombre en el frontend.
-- Configurar una nueva ruta en el backend que reciba el término de búsqueda y realice una consulta en la base de datos.
-- La búsqueda debe ser parcial e insensible a mayúsculas/minúsculas.
-- Mostrar los resultados en pantalla en función del valor buscado.
-- Usar variables de entorno (`.env`) para definir la URL del backend en el frontend.
-- Mantener separadas las capas de modelo, controlador y rutas en el backend.
-- El backend debe estar conectado a una base de datos MongoDB usando Mongoose.
-- Conservar todo lo que ya funciona en la app sin modificar otras funcionalidades.
+- Se agregó un **input de búsqueda** en la vista principal del frontend (`Home`).
+- Al escribir, se realiza una consulta al backend para buscar productos cuyo nombre **coincida parcial o completamente** con el texto ingresado.
+- La búsqueda es **insensible a mayúsculas**.
+- Si no hay coincidencias, se muestra un mensaje indicando que no se encontraron productos.
+- Se agrego variable de entorno en el frontend para acceder a la API del backend.
 
-## 📄 Entrega
+---
 
-Subir el proyecto actualizado a un repositorio en GitHub.
+## ▶️ Instrucciones para ejecutar el proyecto
 
-Incluir un archivo `README.md` que contenga:
+### 📦 Backend
 
-- Título del proyecto y breve descripción de la nueva funcionalidad agregada.
-- Tecnologías utilizadas.
-- Instrucciones para ejecutar backend y frontend.
-- Ejemplos de uso de la nueva funcionalidad.
-- Variables de entorno necesarias (`.env.example`).
+1. Cloná el repositorio:
+   ```bash
+   git clone https://github.com/luchoegonzalez/TPFinal-UTN-BackEnd.git
+   cd backend
+   ```
 
-Asegurarse de que tanto el backend como el frontend funcionen correctamente de forma conjunta.
+2. Instalá dependencias:
+   ```bash
+   npm install
+   ```
 
-## ⏰ Fechas
+3. Creá un archivo `.env` siguiendo de referencia este ejemplo:
+   ```bash
+   PORT=1234
+   URI_DB=mongodb://localhost:27017/nombredb
+   JWT_SECRET=clavesecreta
+   ```
 
-- **Apertura:** Tuesday, 17 de June de 2025, 00:00  
-- **Cierre:** Tuesday, 1 de July de 2025, 23:59
+4. Iniciá el servidor:
+   ```bash
+   npm run dev
+   ```
+
+### 💻 Frontend
+
+1. Ir a la carpeta del frontend:
+   ```bash
+   cd frontend
+   ```
+
+2. Instalá dependencias:
+   ```bash
+   npm install
+   ```
+
+3. Creá un archivo `.env` siguiendo de referencia este ejemplo:
+   ```bash
+   VITE_API_URL=http://localhost:1234/api
+   ```
+El programa encontrara automaticamente el /auth y /products.
+
+4. Iniciá la app:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🔍 Ejemplo de uso
+
+1. Abrí la aplicación en el navegador.
+2. Registrate, inicia sesion y carga algunos productos desde el Dashboard.
+2. En el input de búsqueda, escribí parte del nombre de un producto existente, por ejemplo:
+   - `"papas"` → devuelve `"Papas Fritas Lays"` 
+3. Si no hay resultados, se muestra un mensaje informativo.
+
+---
+
+> 💡 Autor: Luciano González  
+> Trabajo Integrador Final – Curso Desarrollo Web – UTN
